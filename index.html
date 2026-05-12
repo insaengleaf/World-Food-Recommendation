@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전 세계 음식 추천기 v7.5</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+    <button class="theme-toggle" onclick="toggleTheme()">☀️ 모드 변경</button>
+
+    <header>
+        <h1>🌏 전 세계 음식 추천기</h1>
+        <p>지도의 지구 아이콘을 클릭하거나 룰렛을 돌려 전 세계 음식을 만나보세요.</p>
+    </header>
+
+    <div id="map"></div>
+
+    <button id="roll-btn" class="main-btn" onclick="startRoulette()">음식 룰렛 가동 🎡</button>
+
+    <article id="info-card">
+        <div class="food-container">
+            <div class="roulette-container">
+                <img id="food-img" src="" alt="음식">
+            </div>
+            <div class="food-info">
+                <div class="food-header">
+                    <!-- 국기 이미지 영역 -->
+                    <img id="country-flag" class="flag-img" src="" alt="국기" style="display:none; width: 40px; height: auto; border: 1px solid #ddd;">
+                    <span id="food-area" class="area-badge"></span>
+                </div>
+                <h2 id="food-title"></h2>
+                <p id="translated-title" class="translated-text"></p>
+                
+                <div class="action-buttons">
+                    <button id="save-btn" class="action-btn btn-save" onclick="saveToCollection()">⭐ 보관함 저장</button>
+                    <button class="action-btn btn-order" onclick="orderFood()">🛵 주변 식당 찾기</button>
+                </div>
+
+                <div id="recipe" class="recipe-box"></div>
+                <a id="yt-link" target="_blank" class="youtube-link">📺 유튜브 레시피 보기</a>
+            </div>
+        </div>
+    </article>
+
+    <section id="collection">
+        <h3>📂 나의 음식 보관함</h3>
+        <div id="collection-list" class="collection-grid"></div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
